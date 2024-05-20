@@ -6,7 +6,10 @@ language: ENglish USA
 Time and Date: Americas/Sao Paulo
 Software Selection: Server with development tools, headless management, RPM development, System Tools, Power Tools
 Kdump disabled
-or with docker:
+
+
+AFTER INSTALL, BOOT VM AND DO SSH TO IT AND RUN THE COMMANDS BELOW:
+
 dnf update
 dnf groupinfo "Development Tools"
 dnf group install "Development Tools"
