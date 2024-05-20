@@ -12,8 +12,7 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 export CATALINA_HOME=/root/sumauma-siprec-server
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_202
-
+export JAVA_HOME=/usr/java/jdk1.8.0_202-amd64
 
 
 
