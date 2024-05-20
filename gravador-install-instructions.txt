@@ -15,18 +15,24 @@ dnf group install "Power Tools"
 dnf install centos-release-stream -y --allowerasing
 dnf install epel-release epel-next-release
 
-1) descompactar o arquivo arquivos-instalacao-orkaudio.tar.gz no /root
+1) git clone --depth 1 https://github.com/Sumauma/gravador-install.git /root2
+cd /root2
+cp -ax * /root
+rm -rf /root2
+
 cd /root
 2) instalar o Java JDK:
+download jdk-8u202-linux-x64.rpm from Oracle and place it on /root:
 rpm -ivh jdk-8u202-linux-x64.rpm
+
 3) copiar os arquivos de configuracao do ORKAUDIO:
 cd /root/etc
 cp * /etc/orkaudio
 4) copiar os arquivos de inicializacao do ORKAUDIO e do TOMCAT:
 cd /root/init.d
 cp * /etc/init.d
-5) editar o arquivo abaixo e verificar se o path do JDK do JAVA esta correto no dir /usr/lib/jvm:
-ls /usr/lib/jvm/
+5) editar o arquivo abaixo e verificar se o path do JDK do JAVA esta correto no dir /usr/java:
+ls /usr/java
 cp bash-profile-do-usuario-root-gravador.txt /root/.bash_profile
 
 6) configurar a interface de rede que vai sniffar os pacotes SIP/RTP(mirror de pcap):
