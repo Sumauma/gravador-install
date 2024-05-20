@@ -11,10 +11,6 @@ Kdump disabled
 AFTER INSTALL, BOOT VM AND DO SSH TO IT AND RUN THE COMMANDS BELOW:
 
 dnf update
-dnf groupinfo "Development Tools"
-dnf group install "Development Tools"
-dnf groupinfo "Power Tools"
-dnf group install "Power Tools"
 dnf install centos-release-stream -y --allowerasing
 dnf install epel-release 
 
@@ -25,6 +21,7 @@ systemctl stop firewalld.service
 systemctl disable firewalld.service
 iptables -F
 iptables -F -t nat
+reboot
 
 
 2) baixar os pacotes de instalacao do gravador e arquivos de configuracao:
@@ -74,6 +71,9 @@ Procure por:
 <Devices>eth1</Devices>
 Mude para o nome da sua placa de rede no linux:
 <Devices>enp0s3</Devices>
+Procure por:
+<TrackerHostname>localhost</TrackerHostname>
+Mude o "localhost" para o endereço ip da interface, é o endereco ip que o Tomcat vai rodar.
 
 8) vamos configurar pra auto iniciar o orkaudio e o tomcat ao bootar:
 cd /etc/init.d
@@ -85,7 +85,11 @@ systemctl enable tomcat
  dnf install mysql-server
  systemctl enable mysqld.service
  systemctl start mysqld.service
- mysql_secure_installation
+ mysql_secure_installation -> Would you like to setup VALIDATE PASSWORD component? No
+Remove anonymous users? Yes
+Disallow root login remotely? No
+Remove test database and access to it? Yes
+Reload privilege tables now? Yes
  
 mysql -p
 create database cdrs;
@@ -140,12 +144,15 @@ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo systemctl enable docker
 sudo systemctl start docker
 cd /root
-14) criar a aplicacao Docker do Orkaudio para se inicializar sempre que a VM reiniciar:
-sudo docker run -it --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
+14)iniciar o Tomcat:
+service tomcat start
 
-15) abrir outro terminal e rebootar a VM e verificar se subiu tudo.
+15) criar a aplicacao Docker do Orkaudio para se inicializar sempre que a VM reiniciar:
+sudo docker run -it --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest &
 
-16) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
+16) abrir outro terminal e rebootar a VM e verificar se subiu tudo.
+
+17) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
 va ate o diretorio: 
 cd sumauma-siprec-server
 apague o arquivo de pid e tente iniciar o Tomcat novamente:
