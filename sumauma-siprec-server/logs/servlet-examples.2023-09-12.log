@@ -1,0 +1,34 @@
+12-Sep-2023 01:48:34.929 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+12-Sep-2023 01:48:34.931 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+12-Sep-2023 01:48:34.932 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+12-Sep-2023 01:48:34.983 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Sip-Servlets
+12-Sep-2023 01:48:34.991 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+12-Sep-2023 01:48:35.995 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+12-Sep-2023 01:48:36.997 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+12-Sep-2023 01:48:37.150 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+12-Sep-2023 01:48:38.152 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+12-Sep-2023 01:48:39.154 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+12-Sep-2023 01:48:39.263 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [orktrack] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+12-Sep-2023 01:48:39.265 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [orktrack] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+12-Sep-2023 01:48:39.296 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+12-Sep-2023 01:48:39.297 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+12-Sep-2023 01:48:39.340 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+12-Sep-2023 01:48:39.430 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+12-Sep-2023 01:48:43.278 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1354)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1028)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+12-Sep-2023 01:48:51.965 INFO [main] org.restcomm.commons.statistics.sender.RestcommStatsSender.sendStats couldn't send stats data to https://statistics.restcomm.com/rest/ because of Connect to statistics.restcomm.com:443 [statistics.restcomm.com/18.204.201.180] failed: connect timed out, root cause: connect timed out
+12-Sep-2023 01:49:01.987 INFO [main] org.restcomm.commons.statistics.sender.RestcommStatsSender.sendStats couldn't send stats data to https://statistics.restcomm.com/rest/ because of Connect to statistics.restcomm.com:443 [statistics.restcomm.com/18.204.201.180] failed: connect timed out, root cause: connect timed out

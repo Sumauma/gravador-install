@@ -1,0 +1,98 @@
+13-Sep-2023 16:03:30.324 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.26
+13-Sep-2023 16:03:30.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Aug 18 2015 11:38:37 UTC
+13-Sep-2023 16:03:30.414 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.26.0
+13-Sep-2023 16:03:30.415 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+13-Sep-2023 16:03:30.416 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            4.18.0-383.el8.x86_64
+13-Sep-2023 16:03:30.416 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+13-Sep-2023 16:03:30.417 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/java/jdk1.8.0_202-amd64/jre
+13-Sep-2023 16:03:30.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_202-b08
+13-Sep-2023 16:03:30.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+13-Sep-2023 16:03:30.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /root/sumauma-siprec-server
+13-Sep-2023 16:03:30.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /root/sumauma-siprec-server
+13-Sep-2023 16:03:30.421 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/root/sumauma-siprec-server/conf/logging.properties
+13-Sep-2023 16:03:30.422 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Sep-2023 16:03:30.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/root/sumauma-siprec-server/endorsed
+13-Sep-2023 16:03:30.423 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/root/sumauma-siprec-server
+13-Sep-2023 16:03:30.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/root/sumauma-siprec-server
+13-Sep-2023 16:03:30.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/root/sumauma-siprec-server/temp
+13-Sep-2023 16:03:30.425 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+13-Sep-2023 16:03:32.658 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 16:03:32.854 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-Sep-2023 16:03:32.881 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+13-Sep-2023 16:03:32.883 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+13-Sep-2023 16:03:33.525 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 6604 ms
+13-Sep-2023 16:03:33.638 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Sip-Servlets
+13-Sep-2023 16:03:33.638 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.26
+13-Sep-2023 16:03:33.915 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /root/sumauma-siprec-server/webapps/websockets-sip-servlet.war
+13-Sep-2023 16:03:34.109 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [org.apache.catalina.deploy.NamingResourcesImpl@5715a4e3] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:34.308 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [org.apache.catalina.deploy.NamingResourcesImpl@5715a4e3] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:34.330 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [WebappLoader[/websockets-sip-servlet]] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:35.633 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:35.914 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /root/sumauma-siprec-server/webapps/websockets-sip-servlet.war has finished in 1,998 ms
+13-Sep-2023 16:03:35.978 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /root/sumauma-siprec-server/webapps/orktrack.war
+13-Sep-2023 16:03:36.107 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [org.apache.catalina.deploy.NamingResourcesImpl@35ee3b1c] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:36.252 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [org.apache.catalina.deploy.NamingResourcesImpl@35ee3b1c] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:36.253 INFO [localhost-startStop-1] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [WebappLoader[/orktrack]] after start() had already been called. The second call will be ignored.
+13-Sep-2023 16:03:40.714 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:40.782 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /root/sumauma-siprec-server/webapps/orktrack.war has finished in 4,804 ms
+13-Sep-2023 16:03:40.818 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /root/sumauma-siprec-server/webapps/jolokia.war
+13-Sep-2023 16:03:41.343 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:41.360 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log jolokia-agent: No access restrictor found at classpath:/jolokia-access.xml, access to all MBeans is allowed
+13-Sep-2023 16:03:41.475 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /root/sumauma-siprec-server/webapps/jolokia.war has finished in 657 ms
+13-Sep-2023 16:03:41.476 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive /root/sumauma-siprec-server/webapps/sip-servlets-management.war
+13-Sep-2023 16:03:41.866 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:41.868 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive /root/sumauma-siprec-server/webapps/sip-servlets-management.war has finished in 392 ms
+13-Sep-2023 16:03:41.913 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /root/sumauma-siprec-server/webapps/ROOT
+13-Sep-2023 16:03:42.342 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:42.343 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /root/sumauma-siprec-server/webapps/ROOT has finished in 430 ms
+13-Sep-2023 16:03:42.434 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /root/sumauma-siprec-server/webapps/docs
+13-Sep-2023 16:03:42.753 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:42.754 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /root/sumauma-siprec-server/webapps/docs has finished in 320 ms
+13-Sep-2023 16:03:43.028 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /root/sumauma-siprec-server/webapps/examples
+13-Sep-2023 16:03:43.578 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:43.731 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+13-Sep-2023 16:03:43.731 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+13-Sep-2023 16:03:43.736 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /root/sumauma-siprec-server/webapps/examples has finished in 708 ms
+13-Sep-2023 16:03:43.739 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /root/sumauma-siprec-server/webapps/host-manager
+13-Sep-2023 16:03:43.927 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:43.931 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /root/sumauma-siprec-server/webapps/host-manager has finished in 191 ms
+13-Sep-2023 16:03:43.931 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory /root/sumauma-siprec-server/webapps/manager
+13-Sep-2023 16:03:44.110 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13-Sep-2023 16:03:44.111 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory /root/sumauma-siprec-server/webapps/manager has finished in 180 ms
+13-Sep-2023 16:03:44.135 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 16:03:44.148 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+13-Sep-2023 16:03:44.573 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 11045 ms
+13-Sep-2023 21:24:51.771 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+13-Sep-2023 21:24:51.773 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 21:24:51.825 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+13-Sep-2023 21:24:51.876 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service Sip-Servlets
+13-Sep-2023 21:24:51.883 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+13-Sep-2023 21:24:52.885 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+13-Sep-2023 21:24:53.887 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 1 instance(s) to be deallocated for Servlet [WebSocketB2BUASipServlet]
+13-Sep-2023 21:24:54.034 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+13-Sep-2023 21:24:55.036 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+13-Sep-2023 21:24:56.037 INFO [localhost-startStop-2] org.apache.catalina.core.StandardWrapper.unload Waiting for 2 instance(s) to be deallocated for Servlet [SipRecServlet]
+13-Sep-2023 21:24:56.146 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [orktrack] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+13-Sep-2023 21:24:56.148 WARNING [localhost-startStop-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [orktrack] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:64)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+13-Sep-2023 21:24:56.164 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+13-Sep-2023 21:24:56.165 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+13-Sep-2023 21:24:56.205 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+13-Sep-2023 21:24:56.254 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+13-Sep-2023 21:25:00.877 INFO [Abandoned connection cleanup thread] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+ java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1354)
+	at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1028)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.checkContextClassLoaders(AbandonedConnectionCleanupThread.java:90)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:63)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+13-Sep-2023 21:25:08.664 INFO [main] org.restcomm.commons.statistics.sender.RestcommStatsSender.sendStats couldn't send stats data to https://statistics.restcomm.com/rest/ because of Connect to statistics.restcomm.com:443 [statistics.restcomm.com/18.204.201.180] failed: connect timed out, root cause: connect timed out
+13-Sep-2023 21:25:18.672 INFO [main] org.restcomm.commons.statistics.sender.RestcommStatsSender.sendStats couldn't send stats data to https://statistics.restcomm.com/rest/ because of Connect to statistics.restcomm.com:443 [statistics.restcomm.com/18.204.201.180] failed: connect timed out, root cause: connect timed out

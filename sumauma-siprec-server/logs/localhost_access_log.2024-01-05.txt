@@ -1,0 +1,1 @@
+127.0.0.1 - - [05/Jan/2024:14:26:48 -0200] "GET /orktrack/command?type=init&name=orkaudio-gravador-siprec-mavenir&hostname=gravador-siprec-mavenir&servicetype=A&tcpport=59140&protocol=&fileserveport=8080&contextpath=%2Faudio&servepath=&absolutepath=%2Fvar%2Flog%2Forkaudio%2Faudio&streamingport=&username=&password=&sshport=22&hostname=gravador-siprec-mavenir& HTTP/1.0" 200 48

@@ -1,0 +1,19 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin
+
+export PATH
+
+export CATALINA_HOME=/root/sumauma-siprec-server
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_202
+
+
+
+

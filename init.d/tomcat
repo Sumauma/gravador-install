@@ -1,0 +1,35 @@
+#! /bin/sh
+#
+# chkconfig: 2345 98 02
+# description: Tomcat daemon
+#
+# This startup script belongs to the /etc/init.d/ directory.
+# In order to run it automatically at bootup, 
+# run the following command (redhat and derivatives):
+#
+# chkconfig --add tomcat
+#
+set -e
+export CATALINA_HOME=/root/sumauma-siprec-server
+export JAVA_HOME=/usr/java/jdk1.8.0_202-amd64
+export CATALINA_PID="$CATALINA_HOME/tomcat.pid"
+case "$1" in
+   start)
+      echo -n "Starting Tomcat ... "
+      ulimit -c 10000
+      $CATALINA_HOME/bin/catalina.sh start
+      echo "started."
+      ;;
+   stop)
+      echo -n "Stopping orkaudio ... "
+      $CATALINA_HOME/bin/catalina.sh stop
+      echo "stopped"
+      ;;
+   *)
+      N=/etc/init.d/tomcat
+      echo "Usage: $N {start|stop}" >&2
+      exit 1
+      ;;
+esac
+
+exit 0

@@ -1,0 +1,6 @@
+127.0.0.1 - - [05/Oct/2023:10:33:35 -0300] "GET /orktrack/command?type=init&name=orkaudio-gravador-siprec-mavenir&hostname=gravador-siprec-mavenir&servicetype=A&tcpport=59140&protocol=&fileserveport=8080&contextpath=%2Faudio&servepath=&absolutepath=%2Fvar%2Flog%2Forkaudio%2Faudio&streamingport=&username=&password=&sshport=22&hostname=gravador-siprec-mavenir& HTTP/1.0" 200 48
+10.0.0.11 - - [05/Oct/2023:10:48:26 -0300] "GET / HTTP/1.1" 200 11452
+10.0.0.11 - - [05/Oct/2023:10:48:27 -0300] "GET /asf-logo.png HTTP/1.1" 200 17811
+10.0.0.11 - - [05/Oct/2023:10:48:27 -0300] "GET /favicon.ico HTTP/1.1" 200 21630
+10.0.0.11 - - [05/Oct/2023:10:48:35 -0300] "GET /orktrack HTTP/1.1" 302 -
+10.0.0.11 - - [05/Oct/2023:10:48:36 -0300] "GET /orktrack/ HTTP/1.1" 200 39483

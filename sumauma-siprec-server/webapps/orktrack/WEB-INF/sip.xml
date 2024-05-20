@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sip-app>
+    <app-name>SumaumaSipRecApplication</app-name>
+    <display-name>Sumaúma SipRec Servlet</display-name>
+    <description>Sumaúma SipRec Servlet app that records voice calls to wav files</description>
+
+    <servlet-selection>
+        <main-servlet>
+            SipRecServlet
+        </main-servlet>
+    </servlet-selection>
+
+    <servlet>
+        <servlet-name>SipRecServlet</servlet-name>
+        <display-name>SipRecServlet</display-name>
+        <description>SipRec SIP servlet</description>
+        <servlet-class>
+            br.com.sumauma.siprec.SipRecServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <context-param>
+        <param-name>ip.address</param-name>
+        <param-value>10.3.0.5</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            br.com.sumauma.siprec.SipRecServlet
+        </listener-class>
+    </listener>
+</sip-app>
+

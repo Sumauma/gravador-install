@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Implementation-Title: org.mobicents.servlet.sip.management:sip-servlet
+ s-management
+Implementation-Version: 3.2.0-89
+Built-By: ubuntu
+Tool: Bnd-1.15.0
+Bundle-Name: sip-servlets-management
+Created-By: Apache Maven Bundle Plugin
+Implementation-URL: http://www.restcomm.org
+SVN-Revision: fe77b83e3057131dd885475393717bffcb74720a
+Implementation-Vendor-Id: TeleStax, Inc.
+Build-Jdk: 1.7.0_45
+Bundle-Version: 3.2.0.89
+Bnd-LastModified: 1511793245746
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.gnu.org/licenses/lgpl.html
+Bundle-Description: Restcomm SIP Servlets
+Bundle-SymbolicName: org.mobicents.servlet.sip.management.sip-servlets
+ -management
+

@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Export-Package: org.mobicents.servlet.sip.example;uses:="javax.servlet
+ ,javax.annotation,org.apache.log4j,javax.servlet.sip"
+Implementation-Title: org.mobicents.servlet.sip.examples:websockets-si
+ p-servlet
+Implementation-Version: 3.2.0-89
+Built-By: ubuntu
+Tool: Bnd-1.15.0
+Bundle-Name: Websockets Example
+Created-By: Apache Maven Bundle Plugin
+Implementation-URL: http://www.restcomm.org
+SVN-Revision: fe77b83e3057131dd885475393717bffcb74720a
+Implementation-Vendor-Id: TeleStax, Inc.
+Build-Jdk: 1.7.0_45
+Bundle-Version: 3.2.0.89
+Bnd-LastModified: 1511793239988
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.gnu.org/licenses/lgpl.html
+Bundle-Description: Restcomm SIP Servlets
+Import-Package: javax.annotation,javax.servlet,javax.servlet.sip,org.a
+ pache.log4j;version="[1.2,2)"
+Bundle-SymbolicName: org.mobicents.servlet.sip.examples.websockets-sip
+ -servlet
+
