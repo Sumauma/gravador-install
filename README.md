@@ -18,6 +18,11 @@ dnf install epel-release epel-next-release
 1) DISABLE SELINUX:
 vi /etc/selinux/config
 change from SELINUX=enforcing to SELINUX=disabled
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+iptables -F
+iptables -F -t nat
+
 
 2) baixar os pacotes de instalacao do gravador e arquivos de configuracao:
 cd /
@@ -136,4 +141,11 @@ cd /root
 sudo docker run -it --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
 
 15) abrir outro terminal e rebootar a VM e verificar se subiu tudo.
+
+16) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
+va ate o diretorio: 
+cd sumauma-siprec-server
+apague o arquivo de pid e tente iniciar o Tomcat novamente:
+rm tomcat.pid
+
 
