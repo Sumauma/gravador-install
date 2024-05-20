@@ -16,7 +16,7 @@ dnf group install "Development Tools"
 dnf groupinfo "Power Tools"
 dnf group install "Power Tools"
 dnf install centos-release-stream -y --allowerasing
-dnf install epel-release epel-next-release
+dnf install epel-release 
 
 1) DISABLE SELINUX:
 vi /etc/selinux/config
