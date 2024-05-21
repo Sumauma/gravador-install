@@ -152,23 +152,28 @@ cd /root
 14)iniciar o Tomcat:
 service tomcat start
 
-15) criar a aplicacao Docker do Orkaudio para se inicializar sempre que a VM reiniciar:
+15) criar a aplicacao Docker do Orkaudio para se inicializar sempre que a VM reiniciar, o proximo comando é meio chato, porque ainda nao descobri como rodar ele em background sem dar erro, ele vai travar e nunca mais vai voltar a linha de comando, vai travar o terminal e começar a cuspir logs do orkaudio que é o sniffer PCAP que grava o SIPREC em arquivos WAV. Outra coisa, o docker tenta usar a imagem local e quando nao existe ele da um erro avisando que nao conseguiu pegar a imagem local e ai ele conecta na internet no repositorio DOCKER da Sumauma e faz o download localmente e depois disso ele utiliza a imagem baixada e vida que segue:
+    
 sudo docker run -it --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
 
 Esse terminal vai travar e começar a cuspir os logs do orkaudio.
-16) abrir outro terminal e rebootar a VM e verificar se subiu tudo:
-docker container ls
-devera aparecer 1 container rodando:
+
+16) abrir outro terminal e realizar um SSH na VM que o terminal travou, rebootar a VM:
+reboot <enter>
+17) dar SSH novamente na VM que vc rebootou apos 1 minuto pra dar tempo dela ligar e verificar se esta tudo rodando automagicamente:
+    
+docker container ls (este comando lista os containers docker que estao rodando)
+devera aparecer 1 container rodando(nao vai aparecer o mesmo container id abaixo e nem o mesmo NAME e nem o mesmo tempo de minutos no STATUS):
 CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS     NAMES
 115cb9f323d1   sumauma/orkaudio:latest   "/opt/entrypoint.sh …"   8 minutes ago   Up 4 minutes             dreamy_mestorf
 
 verifique se tem 1 processo java rodando, que é o TOMCAT:
 ps -ef|grep java
 
-17) se tudo estiver OK da um reboot:
+18) se tudo estiver OK da um reboot:
 reboot
 
-18) fique testando ping e tente dar TELNET Ou NCAT nas portas 8080(Tomcat) e 5090(SIP/udp ou tcp):
+19) fique testando ping e tente dar TELNET Ou NCAT nas portas 8080(Tomcat) e 5090(SIP/udp ou tcp):
 
 telnet ip-gravador 8080
 telnet ip-gravador 5090
@@ -177,7 +182,7 @@ se nao conectar entra e limpa o firewall:
 iptables -F
 iptables -F -t nat
 
-17) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
+20) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
 va ate o diretorio: 
 cd sumauma-siprec-server
 apague o arquivo de pid e tente iniciar o Tomcat novamente:
