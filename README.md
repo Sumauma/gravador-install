@@ -11,7 +11,6 @@ Kdump disabled
 AFTER INSTALL, BOOT VM AND DO SSH TO IT AND RUN THE COMMANDS BELOW:
 
 dnf update
-dnf install centos-release-stream -y --allowerasing
 dnf install epel-release 
 
 1) DISABLE SELINUX:
