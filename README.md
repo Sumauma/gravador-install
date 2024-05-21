@@ -96,12 +96,24 @@ Disallow root login remotely? No
 Remove test database and access to it? Yes
 Reload privilege tables now? Yes
  
-mysql -p
-create database cdrs;
-quit
+mysql -p <enter>
+
+mysql> create database cdrs;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> UPDATE mysql.user SET host='%' WHERE user='root';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+mysql> quit
+
 cd /root/
 mysql -p cdrs < mysql-cdrs.sql
-quit
 
 10) criar o diretorio onde os arquivos de audio das gravacoes serao armazenados localmente para posterior envio pra um NAS ou nuvem:
 mkdir /var/log/orkaudio
@@ -182,10 +194,15 @@ se nao conectar entra e limpa o firewall:
 iptables -F
 iptables -F -t nat
 
-20) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
+20) agora que está tudo rodando voce pode acessar a interface web do gravador pra ver as gravacoes:
+ http://192.168.40.249:8080/orktrack/ (substituir o endereço ip para o endereco do servidor em questao)
+   
+21) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
 va ate o diretorio: 
 cd sumauma-siprec-server
 apague o arquivo de pid e tente iniciar o Tomcat novamente:
 rm tomcat.pid
 
-
+22) as gravacoes WAV ficam em pastas dentro do diretorio: /var/log/orkaudio
+    as pastas sao formadas por ano, mes, dia, hora da gravacao.
+    
