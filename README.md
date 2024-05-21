@@ -21,10 +21,15 @@ systemctl stop firewalld.service
 systemctl disable firewalld.service
 iptables -F
 iptables -F -t nat
+vi /etc/ssh/sshd_config
+procure por: GSSAPIAuthentication yes
+troque por: GSSAPIAuthentication no
+salve pressionando :x <enter>
+
 reboot
 
 
-2) baixar os pacotes de instalacao do gravador e arquivos de configuracao:
+3) baixar os pacotes de instalacao do gravador e arquivos de configuracao:
 cd /
 git clone --depth 1 https://github.com/Sumauma/gravador-install.git /root2
 cd /root2
@@ -32,7 +37,7 @@ cp -ax * /root
 rm -rf /root2
 
 
-3) instalar o Java JDK:
+4) instalar o Java JDK:
 
 download jdk-8u202-linux-x64.rpm from Oracle and place it on /root:
 abrir no chrome: https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html
