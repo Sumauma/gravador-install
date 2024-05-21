@@ -90,6 +90,7 @@ systemctl enable tomcat
  dnf install mysql-server
  systemctl enable mysqld.service
  systemctl start mysqld.service
+agora vamos definir a senha do usuário root do MySQL rodando o comando abaixo, cadastra a senha que voce quiser, anote pois será usado nos próximos passos:
  mysql_secure_installation -> Would you like to setup VALIDATE PASSWORD component? No
 Remove anonymous users? Yes
 Disallow root login remotely? No
@@ -119,15 +120,15 @@ procurar por:
         <param-value>10.3.0.5</param-value>
 </context-param>
 trocar pelo endereco ip da interface que vai ouvir pelas requisicoes SIP
+
+agora vamos configurar no Tomcat o endereço ip e senha que está rodando o MySQL server instalado no item anterior, vamos usar a senha que foi cadastrada pro usuário root:
 vi web.xml 
-trocar na url abaixo o localhost pelo endereco ip da interface:
+trocar na url abaixo o localhost pelo endereco ip da interface que está rodando o MySQL server:
 <context-param>
         <param-name>jdbcURL</param-name>
         <param-value>jdbc:mysql://localhost/cdrs</param-value>
 </context-param>
-trocar a senha da variavel jdbcPassword
-
-trocar o usuario da variavel jdbcUsername
+trocar a senha da variavel jdbcPassword(senha cadastrada no usuario root do MySQL)
 
 12) 
 cd /root/sumauma-siprec-server/conf
