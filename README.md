@@ -1,4 +1,4 @@
-Centos 8 Stream install:
+Linux versions supported: Centos 8 Stream or ORACLE LINUX 8.8(OL8.8) install:
 
 DVD ISO:
 keyboard: Portuguese Brazil
