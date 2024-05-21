@@ -4,7 +4,7 @@ DVD ISO:
 keyboard: Portuguese Brazil
 language: ENglish USA
 Time and Date: Americas/Sao Paulo
-Software Selection: Server with development tools, headless management, RPM development, System Tools, Power Tools
+Software Selection: Server with development tools, headless management, System Tools
 Kdump disabled
 
 
