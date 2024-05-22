@@ -161,7 +161,7 @@ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo systemctl enable docker
 sudo systemctl start docker
 
-14)vamis iniciar o Tomcat server:
+14)vamos iniciar o Tomcat server:
 service tomcat start
 
 deverá listar umas linhas indicando que o Tomcat foi iniciado com sucesso:
@@ -174,8 +174,13 @@ Using CATALINA_PID:    /root/sumauma-siprec-server/tomcat.pid
 Tomcat started.
 started.
 
-
-15) criar a aplicacao Docker do PCAP sniffer chamado Oreka Orkaudio, essa aplicacao roda numa versao especifica de linux e por causa disso tivemos que criar uma imagem docker que simula essa versao do linux e executa ela nesse container:
+15) se a instalacao nao tiver internet para copiar a imagem docker do orkaudio, devemos ir numa VM que tem internet e criar o arquivo de imagem com o comando:
+    docker save -o orkaudio-docker-image.tar sumauma/orkaudio:latest
+    vai criar o arquivo orkaudio-docker-image.tar com tamanho de 400MB
+    copiar o arquivo de algum jeito para a VM de destino, logar na vm de destino, ir na pasta onde o arquivo foi copiado e carregar no docker com o comando:
+    docker load -i orkaudio-docker-image.tar
+    
+16) criar a aplicacao Docker do PCAP sniffer chamado Oreka Orkaudio, essa aplicacao roda numa versao especifica de linux e por causa disso tivemos que criar uma imagem docker que simula essa versao do linux e executa ela nesse container:
     
 sudo docker run -d --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
 
@@ -184,7 +189,7 @@ Esse comando irá retornar o hash do container id criado, vide exemplo abaixo:
 70e63eef740c02bf5be8b8c909d733b2055dca519ec473751015cb6f98ad4914
 
 
-16) vamos verificar se os 12 primeiros caracteres do hash acima batem com o id do container ao rodar o comando que lista os containers ativos do docker:
+17) vamos verificar se os 12 primeiros caracteres do hash acima batem com o id do container ao rodar o comando que lista os containers ativos do docker:
     docker container ls
     Exemplo:
     [root@localhost ~]# docker container ls
