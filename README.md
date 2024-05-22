@@ -160,32 +160,57 @@ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 sudo systemctl enable docker
 sudo systemctl start docker
-cd /root
-14)iniciar o Tomcat:
+
+14)vamis iniciar o Tomcat server:
 service tomcat start
 
-15) criar a aplicacao Docker do Orkaudio para se inicializar sempre que a VM reiniciar, o proximo comando é meio chato, porque ainda nao descobri como rodar ele em background sem dar erro, ele vai travar e nunca mais vai voltar a linha de comando, vai travar o terminal e começar a cuspir logs do orkaudio que é o sniffer PCAP que grava o SIPREC em arquivos WAV. Outra coisa, o docker tenta usar a imagem local e quando nao existe ele da um erro avisando que nao conseguiu pegar a imagem local e ai ele conecta na internet no repositorio DOCKER da Sumauma e faz o download localmente e depois disso ele utiliza a imagem baixada e vida que segue:
+deverá listar umas linhas indicando que o Tomcat foi iniciado com sucesso:
+
+
+15) criar a aplicacao Docker do PCAP sniffer chamado Oreka Orkaudio:
     
-sudo docker run -it --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
+sudo docker run -d --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
 
-Esse terminal vai travar e começar a cuspir os logs do orkaudio.
+Esse comando irá retornar o hash do container id criado, vide exemplo abaixo:
+[root@localhost ~]# sudo docker run -d --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest
+70e63eef740c02bf5be8b8c909d733b2055dca519ec473751015cb6f98ad4914
 
-16) abrir outro terminal e realizar um SSH na VM que o terminal travou, rebootar a VM:
-reboot <enter>
-17) dar SSH novamente na VM que vc rebootou apos 1 minuto pra dar tempo dela ligar e verificar se esta tudo rodando automagicamente:
+
+16) vamos verificar se os 12 primeiros caracteres do hash acima batem com o id do container ao rodar o comando que lista os containers ativos do docker:
+    docker container ls
+    Exemplo:
+    [root@localhost ~]# docker container ls
+    CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS     NAMES
+    70e63eef740c   sumauma/orkaudio:latest   "/opt/entrypoint.sh …"   8 seconds ago   Up 8 seconds             flamboyant_merkle   
+
+Como podemos ver do item 15 o hash gerado foi: 70e63eef740c02bf5be8b8c909d733b2055dca519ec473751015cb6f98ad4914
+E o container id do comando acima foi:         70e63eef740c
+Isso quer dizer que o container foi criado com sucesso e ainda está rodando.
+
+18) Para verificar se o container esta rodando a aplicacao "orkaudio" com sucesso, vamos ver nos logs da aplicacao se a interface de rede foi conectada com sucesso para realizar PCAP dos pacotes:
+    a) cd /var/log/orkaudio
+    b) less orkaudio.log
+    c) Procure no inicio do arquivo pela ocorrencia da frase: "Successfully opened device. pcap handle"
+    d) se aparecer é porque a aplicacao "orkaudio" que está rodando no container docker, conseguiu abrir a interface de rede do host e ativou o PCAP sniffer
+    e) exemplo:
+    [root@localhost ~]# less /var/log/orkaudio/orkaudio.log
+2024-05-22 00:22:10,311  INFO root:264 - 
+
+OrkAudio version : service starting
+
+2024-05-22 00:22:10,322  INFO root:109 - Loaded plugin: /usr/lib/libvoip.so
+2024-05-22 00:22:10,326  INFO packet:1847 - Initializing VoIP plugin
+2024-05-22 00:22:10,327  INFO packet:1554 - Available pcap devices:
+2024-05-22 00:22:10,327  INFO packet:1561 - * ens192 - 
+2024-05-22 00:22:10,327  INFO packet:1353 - Setting pcap socket buffer size:67108864 bytes successful
+2024-05-22 00:22:10,366  INFO packet:1377 - Activating pcaphandle:421a5fc0 successfully
+2024-05-22 00:22:10,366  INFO packet:1392 - Setting setsockopt with bufsize:8388608 successfully
+2024-05-22 00:22:10,367  INFO packet:1484 - Successfully opened device. pcap handle:421a5fc0 message:
     
-docker container ls (este comando lista os containers docker que estao rodando)
-devera aparecer 1 container rodando(nao vai aparecer o mesmo container id abaixo e nem o mesmo NAME e nem o mesmo tempo de minutos no STATUS):
-CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS     NAMES
-115cb9f323d1   sumauma/orkaudio:latest   "/opt/entrypoint.sh …"   8 minutes ago   Up 4 minutes             dreamy_mestorf
-
-verifique se tem 1 processo java rodando, que é o TOMCAT:
-ps -ef|grep java
-
-18) se tudo estiver OK da um reboot:
+19) se tudo estiver OK de um reboot:
 reboot
 
-19) fique testando ping e tente dar TELNET Ou NCAT nas portas 8080(Tomcat) e 5090(SIP/udp ou tcp):
+20) fique testando ping e tente dar TELNET Ou NCAT nas portas 8080(Tomcat) e 5090(SIP/udp ou tcp):
 
 telnet ip-gravador 8080
 telnet ip-gravador 5090
@@ -194,15 +219,15 @@ se nao conectar entra e limpa o firewall:
 iptables -F
 iptables -F -t nat
 
-20) agora que está tudo rodando voce pode acessar a interface web do gravador pra ver as gravacoes:
+21) agora que está tudo rodando voce pode acessar a interface web do gravador pra ver as gravacoes:
  http://192.168.40.249:8080/orktrack/ (substituir o endereço ip para o endereco do servidor em questao)
    
-21) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
+22) se o Tomcat nao subir na porta 8080 apos um reboot ou rodando o comando: service tomcat start
 va ate o diretorio: 
 cd sumauma-siprec-server
 apague o arquivo de pid e tente iniciar o Tomcat novamente:
 rm tomcat.pid
 
-22) as gravacoes WAV ficam em pastas dentro do diretorio: /var/log/orkaudio
+23) as gravacoes WAV ficam em pastas dentro do diretorio: /var/log/orkaudio
     as pastas sao formadas por ano, mes, dia, hora da gravacao.
     
