@@ -165,9 +165,17 @@ sudo systemctl start docker
 service tomcat start
 
 deverá listar umas linhas indicando que o Tomcat foi iniciado com sucesso:
+Starting Tomcat ... Using CATALINA_BASE:   /root/sumauma-siprec-server
+Using CATALINA_HOME:   /root/sumauma-siprec-server
+Using CATALINA_TMPDIR: /root/sumauma-siprec-server/temp
+Using JRE_HOME:        /usr/java/jdk1.8.0_202-amd64
+Using CLASSPATH:       /root/sumauma-siprec-server/bin/bootstrap.jar:/root/sumauma-siprec-server/bin/tomcat-juli.jar
+Using CATALINA_PID:    /root/sumauma-siprec-server/tomcat.pid
+Tomcat started.
+started.
 
 
-15) criar a aplicacao Docker do PCAP sniffer chamado Oreka Orkaudio:
+15) criar a aplicacao Docker do PCAP sniffer chamado Oreka Orkaudio, essa aplicacao roda numa versao especifica de linux e por causa disso tivemos que criar uma imagem docker que simula essa versao do linux e executa ela nesse container:
     
 sudo docker run -d --net=host --restart=always --privileged=true -v /var/log/orkaudio:/var/log/orkaudio  -v /etc/orkaudio:/etc/orkaudio sumauma/orkaudio:latest 
 
