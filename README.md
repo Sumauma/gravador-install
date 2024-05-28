@@ -18,6 +18,8 @@ vi /etc/selinux/config
 change from SELINUX=enforcing to SELINUX=disabled
 systemctl stop firewalld.service
 systemctl disable firewalld.service
+service firewalld stop
+service firewalld disable
 iptables -F
 iptables -F -t nat
 vi /etc/ssh/sshd_config
